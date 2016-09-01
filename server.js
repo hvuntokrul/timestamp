@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var port = process.env.PORT || 8080; //for Heroku
 
 //answer to homepage requests
 app.use('/', express.static(__dirname + '/public'));
@@ -34,6 +35,6 @@ app.param('date', function(req, res, next, date){
 //answer get requests with supplied parameters
 app.get('/:date', function (req, res){});
 //start server
-app.listen(8080, function () {
+app.listen(port, function () {
   console.log('Timestamp app listening on port 8080!');
 });
