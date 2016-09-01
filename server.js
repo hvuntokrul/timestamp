@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 //answer to homepage requests
-//app.use('/', express.static(__dirname + '/public'));
+app.use('/', express.static(__dirname + '/public'));
 
 //extract parameter sent and process it
 app.param('date', function(req, res, next, date){
